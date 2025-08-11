@@ -15,8 +15,8 @@
     --panel-bg:rgba(255,255,255,.88);
     --panel-border:#c8dff6;
     --input-bg:rgba(245,250,255,.92);
-    --btn:#02D9F3;       /* requested cyan */
-    --btn-hover:#00b9d1; /* slightly darker on hover */
+    --btn:#d82121;       /* Disney brochure red */
+    --btn-hover:#b71b1b; /* darker on hover */
     --placeholder:#0f3a6a; /* base tone; we’ll lower opacity */
   }
   *{box-sizing:border-box}
@@ -32,7 +32,6 @@
     color:var(--navy);
   }
 
-  /* hard center regardless of odd scrollbars/safe areas */
   .card{
     width:min(560px,94vw);
     margin-inline:auto;
@@ -87,7 +86,7 @@
 
   button{
     border:0; border-left:1px solid var(--panel-border);
-    background:var(--btn); color:#003a5a; /* dark text for contrast on cyan */
+    background:var(--btn); color:#ffffff;
     padding:0 22px;
     font-size:16px; font-weight:700; letter-spacing:.3px;
     font-family:"Cinzel", serif;
@@ -98,7 +97,6 @@
 
   .status{ min-height:18px; margin-top:10px; font-size:13px; opacity:.95 }
 
-  /* Ensure perfect centering on very small screens */
   @media (max-width:420px){
     .card{ padding:18px }
     .hero-icons{ font-size:48px }
