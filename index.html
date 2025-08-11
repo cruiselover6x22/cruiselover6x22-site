@@ -1,0 +1,33 @@
+<!-- cruiselover6x22 custom Substack subscribe -->
+<div style="max-width:480px;margin:0 auto;background:#FFF7E7;
+            padding:16px 12px 20px;border-radius:8px;text-align:center;
+            box-sizing:border-box;">
+  <div style="font-size:24px;line-height:1;margin:20px 0 8px;">✉️✨↓</div>
+
+  <iframe name="cl6x22-hidden" style="display:none;"></iframe>
+
+  <form action="https://cruiselover6x22.substack.com/api/v1/free"
+        method="post" target="cl6x22-hidden"
+        onsubmit="document.getElementById('cl6x22-feedback').textContent=
+                  'Thank you! You will receive a confirmation email shortly ✨';">
+    <input type="hidden" name="publication_id" value="YOUR_PUBLICATION_ID_HERE">
+    <input type="hidden" name="source" value="custom_embed">
+
+    <div style="display:flex;align-items:stretch;
+                border:1px solid #ffc400;border-radius:6px;overflow:hidden;">
+      <input type="email" name="email" placeholder="Type your email…" required
+             style="flex:1 1 230px;min-width:0;padding:12px 14px;
+                    font-size:16px;border:0;background:#FFF7E7;
+                    outline:none;box-sizing:border-box;">
+      <button type="submit"
+              style="border:0;border-left:1px solid #ffc400;
+                     background:#ffc400;color:#fff;font-size:16px;
+                     font-weight:600;letter-spacing:0.6px;
+                     padding:12px 24px;cursor:pointer;">
+        Subscribe
+      </button>
+    </div>
+  </form>
+
+  <div id="cl6x22-feedback" style="margin-top:10px;font-size:14px;"></div>
+</div>
