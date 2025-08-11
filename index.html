@@ -5,154 +5,98 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>cruiselover6x22</title>
 
-<!-- Font: friendly, modern, a little cheeky but readable -->
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+<!-- New font: clean, modern -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
   :root{
-    --bg1:#eaf7ff;      /* very light ocean */
-    --bg2:#ffffff;      /* white blend */
-    --navy:#0b3d91;     /* deep nautical blue */
-    --sky:#5aa7ff;      /* sky blue accent */
-    --foam:#d7ecff;     /* pale border */
-    --text:#0e2433;     /* dark readable */
-    --button:#147aff;   /* primary button */
-    --button-hover:#0f63cc;
+    --ocean1:#e6f3ff;
+    --ocean2:#cfe8ff;
+    --card:#ffffff;
+    --edge:#d8e9ff;
+    --text:#0e2433;
+    --btn:#0d5ad6;         /* deep ocean blue */
+    --btn-hover:#0a49ad;
     --ring:#8cc8ff;
   }
-  html,body{height:100%;}
+  *{box-sizing:border-box}
+  html,body{height:100%}
   body{
     margin:0;
-    font-family:'Outfit',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif;
-    color:var(--text);
-    background:linear-gradient(180deg,var(--bg1),var(--bg2));
     display:grid;
     place-items:center;
-    padding:24px;
+    background:linear-gradient(180deg,var(--ocean1),var(--ocean2));
+    font-family:Manrope,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif;
+    color:var(--text);
+    padding:20px;
   }
   .card{
-    width:min(560px,92vw);
-    background:#fff;
-    border:1px solid var(--foam);
+    width:min(520px,92vw);
+    background:var(--card);
+    border:1px solid var(--edge);
     border-radius:18px;
-    box-shadow:0 10px 30px rgba(11,61,145,.08);
-    padding:22px 22px 24px;
+    box-shadow:0 12px 28px rgba(13,90,214,.12);
+    padding:22px;
+    text-align:center;
   }
-  .header{
-    display:flex;align-items:center;justify-content:center;gap:12px;
-    margin:6px 0 12px;
+  .icons{
+    font-size:28px;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    margin:4px 0 16px;
+    user-select:none;
   }
-  .badge{
-    display:inline-flex;align-items:center;justify-content:center;
-    width:44px;height:44px;border-radius:12px;
-    background:linear-gradient(135deg,#bfe1ff 0%,#e8f3ff 100%);
-    border:1px solid var(--foam);
-    box-shadow:inset 0 1px 0 rgba(255,255,255,.7);
-    font-size:22px;
-    animation:float 3.6s ease-in-out infinite;
-  }
-  @keyframes float{
-    0%,100%{ transform:translateY(0) }
-    50%{ transform:translateY(-4px) }
-  }
-  h1{
-    font-size:28px;line-height:1.15;margin:0;
-    letter-spacing:.2px;color:var(--navy);
-  }
-  .sub{
-    margin:6px 0 18px;
-    font-size:15px;color:#345;opacity:.85;text-align:center;
-  }
-
-  /* form bar */
   .bar{
-    display:flex;align-items:stretch;gap:0;overflow:hidden;
-    border:1px solid var(--foam);
+    display:flex;align-items:stretch;overflow:hidden;
+    border:1px solid var(--edge);
     border-radius:12px;
     background:#f7fbff;
   }
+  .bar:focus-within{ box-shadow:0 0 0 4px var(--ring) }
   input[type="email"]{
-    flex:1 1 240px;min-width:0;
-    font-size:16px;line-height:1.2;
+    flex:1 1 260px;min-width:0;
     padding:14px 14px;
+    font-size:16px;
     border:0;background:transparent;outline:none;
   }
-  input[type="email"]::placeholder{ color:#6b8aa6; }
-  input[type="email"]:focus{ outline:none; }
-  .bar:focus-within{
-    box-shadow:0 0 0 4px var(--ring);
-    border-color:var(--sky);
-  }
+  input::placeholder{ color:#6b8aa6 }
   button{
-    border:0;border-left:1px solid var(--foam);
-    background:var(--button);color:#fff;
-    padding:0 22px;font-size:16px;font-weight:700;
-    letter-spacing:.3px;cursor:pointer;
-    transition:transform .05s ease, background .15s ease;
+    border:0;border-left:1px solid var(--edge);
+    background:var(--btn);color:#fff;
+    padding:0 22px;
+    font-size:16px;font-weight:700;letter-spacing:.2px;
+    cursor:pointer;transition:background .15s ease, transform .05s ease;
   }
-  button:hover{ background:var(--button-hover); }
-  button:active{ transform:translateY(1px); }
-
-  .fine{
-    margin-top:10px;
-    font-size:12.5px; color:#496; opacity:.85; text-align:center;
-  }
-
-  /* decorative footer wave */
-  .wave{
-    margin:18px auto 4px;
-    width:100%;max-width:520px;height:8px;
-    background:repeating-linear-gradient(
-      90deg,
-      rgba(20,122,255,.18) 0 20px,
-      rgba(20,122,255,.08) 20px 40px
-    );
-    border-radius:999px;
-    filter:blur(.2px);
-  }
-
-  /* mobile tweaks */
-  @media (max-width:420px){
-    h1{ font-size:24px }
-    button{ padding:0 18px }
-  }
+  button:hover{ background:var(--btn-hover) }
+  button:active{ transform:translateY(1px) }
 </style>
 </head>
 <body>
 
-  <div class="card" role="region" aria-label="Subscribe to cruiselover6x22">
-    <div class="header">
-      <span class="badge" aria-hidden="true">🛳️</span>
-      <h1>Boarding now for <em>cruiselover6x22</em></h1>
-      <span class="badge" aria-hidden="true">🌊</span>
-    </div>
-    <p class="sub">Notes from the high seas — equal parts sincere cruise love and wry deck-chair commentary. Join the list and don’t miss the next sail-away.</p>
+  <div class="card" role="region" aria-label="Subscribe">
+    <div class="icons" aria-hidden="true">✉️ ⛵️ ⬇️</div>
 
     <!-- hidden target iframe (receives the form submission) -->
     <iframe name="cl6x22-hidden" style="display:none;"></iframe>
 
-    <!-- signup form (Substack) -->
+    <!-- Substack signup form -->
     <form action="https://cruiselover6x22.substack.com/api/v1/free"
           method="post" target="cl6x22-hidden"
-          onsubmit="document.getElementById('cl6x22-feedback').textContent='Thank you! Check your email to confirm. 🛟';">
+          onsubmit="document.getElementById('cl6x22-status').textContent='✔︎ Check your email to confirm';">
 
       <!-- required hidden fields -->
       <input type="hidden" name="publication_id" value="5959400">
       <input type="hidden" name="source" value="custom_embed">
 
-      <!-- combined input + button bar -->
+      <!-- input + button -->
       <div class="bar">
         <input type="email" name="email" inputmode="email" autocomplete="email"
-               placeholder="Enter your best shore-side email…" required>
-        <button type="submit" aria-label="Subscribe to cruiselover6x22">
-          Subscribe
-        </button>
+               placeholder="Type your email address" required>
+        <button type="submit" aria-label="Subscribe">Subscribe</button>
       </div>
     </form>
 
-    <div id="cl6x22-feedback" class="fine" role="status" aria-live="polite"></div>
-    <div class="wave" aria-hidden="true"></div>
-    <div class="fine">No spam. Unsubscribe anytime. Powered by Substack.</div>
+    <!-- status line (kept blank, updates after submit) -->
+    <div id="cl6x22-status" style="min-height:18px;margin-top:10px;font-size:13px;"></div>
   </div>
 
 </body>
