@@ -10,30 +10,32 @@
 
 <style>
   :root{
-    /* palette inspired by the brochures: sky/ocean/navy + brochure orange accent */
     --navy:#0f3a6a;
     --navy-soft:#1a518f;
     --panel-bg:rgba(255,255,255,.88);
     --panel-border:#c8dff6;
     --input-bg:rgba(245,250,255,.92);
-    --btn:#ff7816;        /* brochure orange */
-    --btn-hover:#e36a13;
-    --placeholder:#2f5f92;
+    --btn:#02D9F3;       /* requested cyan */
+    --btn-hover:#00b9d1; /* slightly darker on hover */
+    --placeholder:#0f3a6a; /* base tone; we’ll lower opacity */
   }
   *{box-sizing:border-box}
   html,body{height:100%}
   body{
     margin:0;
-    /* Your background image in the repo root as bg.jpg */
+    /* Background image in repo root */
     background:
       linear-gradient(rgba(10,40,90,.18), rgba(10,40,90,.18)),
       url("./bg.jpg") center / cover no-repeat fixed;
-    display:grid; place-items:center; padding:24px;
+    display:flex; align-items:center; justify-content:center;
+    padding:24px 16px;             /* symmetric padding */
     color:var(--navy);
   }
 
+  /* hard center regardless of odd scrollbars/safe areas */
   .card{
     width:min(560px,94vw);
+    margin-inline:auto;
     background:var(--panel-bg);
     border:1px solid var(--panel-border);
     border-radius:16px;
@@ -43,7 +45,15 @@
     backdrop-filter:saturate(1.05) blur(1px);
   }
 
-  /* Title */
+  /* Big emoji header */
+  .hero-icons{
+    font-size:56px;
+    line-height:1;
+    margin:2px 0 8px;
+    user-select:none;
+  }
+
+  /* Title line under icons */
   .title{
     font-family:"Cardo", Georgia, serif;
     font-variant:small-caps;
@@ -52,7 +62,7 @@
     font-size:20px;
     color:var(--navy-soft);
     text-shadow:0 1px 0 rgba(255,255,255,.8);
-    margin:2px 0 14px;
+    margin:0 0 14px;
   }
 
   /* Form bar */
@@ -70,26 +80,36 @@
     font-family:"Cinzel", serif;
     color:#123;
   }
-  input::placeholder{ color:var(--placeholder); opacity:.95 }
+  input::placeholder{
+    color:var(--placeholder);
+    opacity:.55;                    /* softer placeholder */
+  }
 
   button{
     border:0; border-left:1px solid var(--panel-border);
-    background:var(--btn); color:#fff;
+    background:var(--btn); color:#003a5a; /* dark text for contrast on cyan */
     padding:0 22px;
     font-size:16px; font-weight:700; letter-spacing:.3px;
     font-family:"Cinzel", serif;
     cursor:pointer; transition:background .15s ease, transform .05s ease, filter .15s ease;
   }
-  button:hover{ background:var(--btn-hover); filter:saturate(1.05) }
+  button:hover{ background:var(--btn-hover); filter:saturate(1.03) }
   button:active{ transform:translateY(1px) }
 
   .status{ min-height:18px; margin-top:10px; font-size:13px; opacity:.95 }
+
+  /* Ensure perfect centering on very small screens */
+  @media (max-width:420px){
+    .card{ padding:18px }
+    .hero-icons{ font-size:48px }
+  }
 </style>
 </head>
 <body>
 
   <div class="card" role="region" aria-label="Subscribe">
-    <div class="title">✉️ from cruiselover6x22 🛳️⚓️</div>
+    <div class="hero-icons" aria-hidden="true">🛳️ ⚓️</div>
+    <div class="title">✉️ from cruiselover6x22</div>
 
     <!-- hidden target iframe (receives the form submission) -->
     <iframe name="cl6x22-hidden" style="display:none;"></iframe>
@@ -106,7 +126,7 @@
       <!-- input + button -->
       <div class="bar">
         <input type="email" name="email" inputmode="email" autocomplete="email"
-               placeholder="Type your email address" required>
+               placeholder="Type your email..." required>
         <button type="submit" aria-label="Subscribe">Subscribe</button>
       </div>
     </form>
