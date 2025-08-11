@@ -5,19 +5,19 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>cruiselover6x22</title>
 
-<!-- New font: clean, modern -->
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+<!-- Fun retro-ish sans font -->
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
   :root{
-    --ocean1:#e6f3ff;
-    --ocean2:#cfe8ff;
-    --card:#ffffff;
-    --edge:#d8e9ff;
-    --text:#0e2433;
-    --btn:#0d5ad6;         /* deep ocean blue */
-    --btn-hover:#0a49ad;
-    --ring:#8cc8ff;
+    --bg1:#b3e5ff;   /* light sky blue */
+    --bg2:#009dff;   /* mid ocean blue */
+    --card:#ffffff;  
+    --border:#66c2ff;
+    --text:#002f4b;  
+    --btn:#ff6600;   /* cruise brochure orange */
+    --btn-hover:#e65c00;
+    --ring:#ffb380;  /* warm accent ring */
   }
   *{box-sizing:border-box}
   html,body{height:100%}
@@ -25,31 +25,31 @@
     margin:0;
     display:grid;
     place-items:center;
-    background:linear-gradient(180deg,var(--ocean1),var(--ocean2));
-    font-family:Manrope,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif;
+    background:linear-gradient(180deg,var(--bg1),var(--bg2));
+    font-family:'Fredoka',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif;
     color:var(--text);
     padding:20px;
   }
   .card{
     width:min(520px,92vw);
     background:var(--card);
-    border:1px solid var(--edge);
+    border:4px solid var(--border);
     border-radius:18px;
-    box-shadow:0 12px 28px rgba(13,90,214,.12);
-    padding:22px;
+    box-shadow:0 0 0 6px rgba(255,255,255,0.3), 0 8px 18px rgba(0,0,0,0.15);
+    padding:26px;
     text-align:center;
   }
   .icons{
-    font-size:28px;
-    display:flex;align-items:center;justify-content:center;gap:10px;
-    margin:4px 0 16px;
+    font-size:36px;
+    display:flex;align-items:center;justify-content:center;gap:12px;
+    margin:4px 0 18px;
     user-select:none;
   }
   .bar{
     display:flex;align-items:stretch;overflow:hidden;
-    border:1px solid var(--edge);
+    border:2px solid var(--border);
     border-radius:12px;
-    background:#f7fbff;
+    background:#f0faff;
   }
   .bar:focus-within{ box-shadow:0 0 0 4px var(--ring) }
   input[type="email"]{
@@ -58,9 +58,9 @@
     font-size:16px;
     border:0;background:transparent;outline:none;
   }
-  input::placeholder{ color:#6b8aa6 }
+  input::placeholder{ color:#005b82 }
   button{
-    border:0;border-left:1px solid var(--edge);
+    border:0;border-left:2px solid var(--border);
     background:var(--btn);color:#fff;
     padding:0 22px;
     font-size:16px;font-weight:700;letter-spacing:.2px;
@@ -73,7 +73,7 @@
 <body>
 
   <div class="card" role="region" aria-label="Subscribe">
-    <div class="icons" aria-hidden="true">✉️ ⛵️ ⬇️</div>
+    <div class="icons" aria-hidden="true">🛳️ ⚓ 🛟 🌊</div>
 
     <!-- hidden target iframe (receives the form submission) -->
     <iframe name="cl6x22-hidden" style="display:none;"></iframe>
@@ -95,8 +95,8 @@
       </div>
     </form>
 
-    <!-- status line (kept blank, updates after submit) -->
-    <div id="cl6x22-status" style="min-height:18px;margin-top:10px;font-size:13px;"></div>
+    <!-- status line -->
+    <div id="cl6x22-status" style="min-height:18px;margin-top:10px;font-size:14px;font-weight:500;"></div>
   </div>
 
 </body>
